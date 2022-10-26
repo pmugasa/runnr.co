@@ -1,0 +1,24 @@
+{
+  "name": "runnr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmugasa/runnr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmugasa/runnr/issues"
+  },
+  "homepage": "https://github.com/pmugasa/runnr#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  }
+}
