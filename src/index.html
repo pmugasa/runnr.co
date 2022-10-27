@@ -19,23 +19,23 @@
       <div class="flex items-center justify-between">
         <!--logo-->
         <div class="pt-2">
-          <a href="#">
+          <a href="#hero">
             <span class="font-extrabold text-3xl text-txtColor">Runnr</span
-            ><span class="text-secondary text-2xl">.co</span>
+            ><span class="text-secondary text-3xl">.co</span>
           </a>
         </div>
 
         <!--menus-->
         <div class="hidden md:flex space-x-6 ml-auto mr-8">
-          <a class="hover:text-secondary" href="#"> Home </a>
-          <a href="#" class="hover:text-secondary"> How it works </a>
+          <a class="hover:text-secondary" href="#hero"> Home </a>
+          <a href="#howitworks" class="hover:text-secondary"> How it works </a>
         </div>
 
         <!--button-->
         <a
-          href="#"
+          href="#form"
           class="hidden md:block p-3 pt-2 px-6 bg-secondary rounded-full baseline font-bold text-white hover:bg-orange-400"
-          >Sign up</a
+          >Get started</a
         >
       </div>
     </nav>
@@ -60,6 +60,12 @@
               >save up to 70% </span
             >on shipping.
           </p>
+          <!--button-->
+          <a
+            href="#form"
+            class="text-center p-3 pt-2 px-6 bg-secondary rounded-full baseline font-bold text-white hover:bg-orange-400 w-40 mx-auto md:mx-0"
+            >Get started</a
+          >
         </div>
 
         <!--hero-illustration-->
@@ -79,7 +85,7 @@
           <h2 class="text-secondary font-bold text-center text-3xl md:text-4xl">
             How it works
           </h2>
-          <h3 class="text-gray-600 text-2xl font-bold text-center md:text-3xl">
+          <h3 class="text-txtColor text-2xl font-bold text-center md:text-3xl">
             3 Easy Steps
           </h3>
         </div>
@@ -89,13 +95,13 @@
           class="mt-12 flex flex-col items-center md:flex-row md:justify-around"
         >
           <!--computer icon-->
-          <div class="mt-12 mb-12 w-4/12">
+          <div class="">
             <img
               src="/src/assets/signup.png"
               alt="computer"
               class="h-16 w-16 mx-auto"
             />
-            <p class="text-gray-600 text-lg font-semibold text-center mt-4">
+            <p class="text-txtColor text-lg font-semibold text-center mt-4">
               1. Create an account
             </p>
             <p class="text-gray text-center mt-4">
@@ -104,13 +110,13 @@
           </div>
 
           <!--shopping bag icon-->
-          <div class="mt-12 mb-12 w-4/12">
+          <div class="">
             <img
               src="/src/assets/shopping-bag.png"
               alt="computer"
               class="h-16 w-16 mx-auto"
             />
-            <p class="text-gray-600 text-lg font-semibold text-center mt-4">
+            <p class="text-txtColor text-lg font-semibold text-center mt-4">
               2. Shop
             </p>
             <p class="text-gray text-center mt-4">
@@ -119,13 +125,13 @@
           </div>
 
           <!--truck icon-->
-          <div class="mt-12 mb-12 w-4/12">
+          <div class="">
             <img
               src="/src/assets/delivery.png"
               alt="computer"
               class="h-16 w-16 mx-auto"
             />
-            <p class="text-gray-600 text-lg font-semibold text-center mt-4">
+            <p class="text-txtColor text-lg font-semibold text-center mt-4">
               3. Combine & Ship
             </p>
             <p class="text-gray text-center mt-4">
@@ -187,17 +193,17 @@
       <div class="container mx-auto mt-8 bg-white">
         <!--heading-->
         <div class="pt-8">
-          <h2 class="text-txtColor text-center font-bold text-2xl">
+          <h2 class="text-txtColor text-center font-bold text-3xl">
             Coming Soon.
           </h2>
-          <p class="text-secondary text-2xl font-bold text-center">
+          <p class="text-secondary text-3xl font-bold text-center">
             Join the waiting list!
           </p>
         </div>
 
         <!--form-->
 
-        <form>
+        <form id="form">
           <!--name-->
           <div class="pt-4 mx-8">
             <label
@@ -233,7 +239,7 @@
           <div class="pt-4 mx-8">
             <button
               type="submit"
-              class="px-8 py-2 bg-secondary rounded-full font-bold text-white text-lg hover:bg-orange-500"
+              class="px-8 py-2 bg-secondary baseline rounded-full font-bold text-center text-white text-lg hover:bg-orange-500"
             >
               Submit
             </button>
