@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./public/**/*.{html,js}"],
   theme: {
     screens: {
       sm: "480px",
@@ -8,14 +8,14 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-    fontFamily:{
-      nunito: 'Nunito, sans-serif',
+    fontFamily: {
+      nunito: "Nunito, sans-serif",
     },
     extend: {
       colors: {
-        secondary: '#f0b000',
-        primary: '#f4f0ec',
-        txtColor: '#201e1d'
+        secondary: "#f0b000",
+        primary: "#f4f0ec",
+        txtColor: "#201e1d",
       },
     },
   },
