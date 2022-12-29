@@ -97,7 +97,6 @@
     "quick-lru": "^5.1.1",
     "read-cache": "^1.0.0",
     "readdirp": "^3.6.0",
-    "request": "^2.88.2",
     "require-directory": "^2.1.1",
     "resolve": "^1.22.1",
     "reusify": "^1.0.4",
