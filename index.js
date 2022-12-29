@@ -30,7 +30,7 @@ mongoose
   .catch((error) => console.log(error)); //catching error
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/src/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.post("/signup", async (req, res) => {
@@ -43,10 +43,10 @@ app.post("/signup", async (req, res) => {
     mongoose.connection.close(); // closing the connection to the db
   } catch (error) {
     console.log(error);
-    res.sendFile(__dirname + "/src/failed.html");
+    res.sendFile(__dirname + "/public/failed.html");
   }
 
-  res.sendFile(__dirname + "/src/success.html"); // when the user is successfully saved
+  res.sendFile(__dirname + "/public/success.html"); // when the user is successfully saved
 });
 
 const PORT = process.env.PORT;
