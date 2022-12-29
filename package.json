@@ -4,8 +4,8 @@
   "description": "parcel forwarding landing page",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./css/main.css",
-    "watch": "tailwindcss -i ./src/input.css -o ./css/main.css --watch",
+    "build": "tailwindcss -i ./public/input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./public/input.css -o ./css/main.css --watch",
     "start": "node app",
     "dev": "nodemon app"
   },
