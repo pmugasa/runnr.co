@@ -1,62 +1,54 @@
+require("dotenv").config();
 const express = require("express");
-const request = require("request");
 const bodyParser = require("body-parser");
-const path = require("path");
+const mongoose = require("mongoose");
 
 const app = express();
 
-//bodyparser middleware
+// making the app use css
+app.use(express.static(__dirname));
+
+//getting the app to use body parse
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-//static folder
-app.use(express.static(path.join(__dirname, "src")));
-
-//signup route
-app.post("/signup", (req, res) => {
-  const email = req.body;
-
-  // form validation to make sure fields are not empty
-  if (!email) {
-    res.redirect("/failed.html");
-    return;
-  }
-
-  //construct req data
-  const data = {
-    members: [
-      {
-        email_address: email,
-        status: "subscribed",
-        merge_fields: {
-            EMAIL: email
-        }
-      },
-    ],
-  };
-  const postData = JSON.stringify(data);
-
-  const options = {
-    url: "https://us17.api.mailchimp.com/3.0/lists/eb4f985aa8",
-    method: "POST",
-    headers: {
-      Authorization: "auth fec9ad340deba187ddd7a58f129003ff-us17",
-    },
-    body: postData,
-  };
-
-  request(options, (err, response, body) => {
-    if (err) {
-      res.redirect("failed.html");
-    } else {
-      if (response.statusCode === 200) {
-        res.redirect("/success.html");
-      } else {
-        res.redirect("failed.html");
-      }
-    }
-  });
+//user schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
 });
 
-const PORT = process.env.PORT || 5000;
+//user model
+const User = mongoose.model("User", userSchema);
+
+//connecting to DB
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then((result) => {
+    console.log("connected to DB"); // logs when successfully connected to the DB
+  })
+  .catch((error) => console.log(error)); //catching error
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/src/index.html");
+});
+
+app.post("/signup", async (req, res) => {
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+  });
+  try {
+    await user.save();
+    mongoose.connection.close(); // closing the connection to the db
+  } catch (error) {
+    console.log(error);
+    res.sendFile(__dirname + "/src/failed.html");
+  }
+
+  res.sendFile(__dirname + "/src/success.html"); // when the user is successfully saved
+});
+
+const PORT = process.env.PORT;
 
 app.listen(PORT, console.log(`Server started on ${PORT}`));
